@@ -80,6 +80,8 @@ function refactoredMain() {
 }
 
 // リファクタリング前のコードを実行
+console.log("リファクタリング前");
 main();
 // リファクタリング後のコードを実行
+console.log("リファクタリング後");
 refactoredMain();
