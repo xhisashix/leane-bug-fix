@@ -9,6 +9,7 @@
  *    計算済みであればその値を返します。計算が必要な場合は、計算結果を memo に保存します。
  */
 
+let callOut = 0;
 
 /**
  * フィボナッチ数を求める関数（メモ化を使用）
@@ -17,6 +18,7 @@
  * @returns {number} フィボナッチ数
  */
 function fibonacci(n, memo = {}) {
+  callOut++;
   if (n in memo) {
     return memo[n];
   }
@@ -27,9 +29,10 @@ function fibonacci(n, memo = {}) {
   return memo[n];
 }
 
-let number = 30;
+let number = 50;
 console.time('fibonacci');
 let fibonacciNumber = fibonacci(number);
 console.timeEnd('fibonacci');
 
 console.log(number + " 番目のフィボナッチ数は " + fibonacciNumber + " です");
+console.log("再帰関数の呼び出し回数は " + callOut + " 回です");
